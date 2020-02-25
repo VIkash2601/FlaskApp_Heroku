@@ -17,6 +17,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
                                             'DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+# Allows Flask-JWT to return its specific errors and their status codes.
+app.config['PROPAGATE_EXCEPTIONS'] = True
+
 app.secret_key = 'shiva'
 
 api = Api(app)

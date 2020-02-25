@@ -21,6 +21,10 @@ class ItemModel(db.Model):
     def find_item_by_name(cls, name):
         return cls.query.filter_by(name=name).first()
 
+    @classmethod
+    def find_all(cls):
+        return cls.query.all()
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
